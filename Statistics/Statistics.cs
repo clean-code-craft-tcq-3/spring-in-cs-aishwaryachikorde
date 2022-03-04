@@ -121,7 +121,7 @@ namespace Statistics
         //Checking the alerting implementation
         public void checkAndAlert(List<double> thresholdValue)
         {
-            for (var i = 0; i <= thresholdValue.Count; i++)
+            for (var i = 0; i <= thresholdValue.Count-1; i++)
             {
                 switch (thresholdValue[i] > maxThreshold)
                 {
