@@ -11,20 +11,20 @@ namespace Statistics
         /// <summary>
         /// Average
         /// </summary>
-        public float average { get; set; }
+        public double average { get; set; }
 
         /// <summary>
         /// Minimum value
         /// </summary>
-        public float min { get; set; }
+        public double min { get; set; }
 
         /// <summary>
         /// Maximum value
         /// </summary>
-        public float max { get; set; }
+        public double max { get; set; }
         #endregion
 
-        public Stats CalculateStatistics(List<float> numbers)
+        public Stats CalculateStatistics(List<double> numbers)
         {
             Stats myNumber = new Stats();
             average = myNumber.GetAverage(numbers);
@@ -37,25 +37,25 @@ namespace Statistics
 
      public class Stats
     {
-        public float GetAverage(List<float> input)
+        public double GetAverage(List<double> input)
         {
-            float average = input.Average();
+            double average = input.Average();
             Console.WriteLine("The average of the input numbers is -" + average);
 
             return average;
         }
 
-        public float GetMinValue(List<float> input)
+        public double GetMinValue(List<double> input)
         {
-            float min = input.Min();
+            double min = input.Min();
             Console.WriteLine("The minimum value among the input values is -" + min);
 
             return min;
         }
 
-        public float GetMaxValue(List<float> input)
+        public double GetMaxValue(List<double> input)
         {
-            float max = input.Max();
+            double max = input.Max();
             Console.WriteLine("The maximum value among the input values is -" + max);
 
             return max;
@@ -109,17 +109,17 @@ namespace Statistics
     //StatsAleter class
     public class StatsAlerter
     {
-        public float maxThreshold;
+        public double maxThreshold;
         private IAlerter[] alerter;
 
-        public StatsAlerter(float maxThreshold, IAlerter[] alerters)
+        public StatsAlerter(double maxThreshold, IAlerter[] alerters)
         {
             this.maxThreshold = maxThreshold;
             this.alerter = alerters;
         }
 
         //Checking the alerting implementation
-        public void checkAndAlert(List<float> thresholdValue)
+        public void checkAndAlert(List<double> thresholdValue)
         {
             for (var i = 0; i <= thresholdValue.Count; ++i)
             {
@@ -139,3 +139,5 @@ namespace Statistics
         }
     }
 }
+    
+
