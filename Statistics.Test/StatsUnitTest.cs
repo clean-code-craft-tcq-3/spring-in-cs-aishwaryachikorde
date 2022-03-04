@@ -12,7 +12,7 @@ namespace Statistics.Test
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<float>{1.5f, 8.9f, 3.2f, 4.5f});
+                new List<float>{1.5F, 8.9F, 3.2F, 4.5F});
             float epsilon = 0.001F;
             Assert.True(Math.Abs(statsComputer.average - 4.525) <= epsilon);
             Assert.True(Math.Abs(statsComputer.max - 8.9) <= epsilon);
@@ -23,7 +23,7 @@ namespace Statistics.Test
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<float>{0/0f,0f/0,0/0f});
+                new List<float>{0/0F,0F/0,0/0F});
             //All fields of computedStats (average, max, min) must be
             //Double.NaN (not-a-number), as described in
             //https://docs.microsoft.com/en-us/dotnet/api/system.double.nan?view=netcore-3.1
@@ -37,7 +37,7 @@ namespace Statistics.Test
 
             const float maxThreshold = 10.2;
             var statsAlerter = new StatsAlerter(maxThreshold, alerters);
-            statsAlerter.checkAndAlert(new List<float>{0.2f, 11.9f, 4.3f, 8.5f});
+            statsAlerter.checkAndAlert(new List<float>{0.2F, 11.9F, 4.3F, 8.5F});
 
             Assert.True(emailAlert.emailSent);
             Assert.True(ledAlert.ledGlows);
